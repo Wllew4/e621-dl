@@ -2,6 +2,7 @@ package e6api
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 )
@@ -15,6 +16,7 @@ func fetch_json(url string, out any) {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(string(body))
 	err = json.Unmarshal(body, &out)
 	if err != nil {
 		panic(err)

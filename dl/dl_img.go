@@ -7,6 +7,16 @@ import (
 	"os"
 )
 
+var total_downloaded = 0
+
+func incDownloaded() {
+	total_downloaded++
+}
+
+func GetDownloadTotal() int {
+	return total_downloaded
+}
+
 func DL(url string, path string) {
 	fmt.Println("Downloading: " + url)
 	f, _ := os.Create(path)
@@ -21,4 +31,5 @@ func DL(url string, path string) {
 		panic(err)
 	}
 	fmt.Println("Done: " + path)
+	incDownloaded()
 }

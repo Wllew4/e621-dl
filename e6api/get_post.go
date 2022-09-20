@@ -1,6 +1,9 @@
 package e6api
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type postResponse struct {
 	Posts []Post
@@ -15,8 +18,16 @@ func GetPostByUrl(url string) Post {
 	return getPost(id)
 }
 
-func getPost(id string) Post {
+func GetPostsByTags(tags []string, first int) []Post {
 	var unmarshalled postResponse
-	fetch_json("https://e621.net/posts.json?tags=id:"+id, &unmarshalled)
-	return unmarshalled.Posts[0]
+	tags_query := strings.Join(tags, " ")
+	fetch_json("https://e621.net/posts.json"+
+		"?tags="+tags_query+
+		"&limit="+fmt.Sprint(first),
+		&unmarshalled)
+	return unmarshalled.Posts
+}
+
+func getPost(id string) Post {
+	return GetPostsByTags([]string{"id:" + id}, 1)[0]
 }
