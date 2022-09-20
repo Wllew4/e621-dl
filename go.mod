@@ -1,4 +1,4 @@
-module e621dl
+module e621-dl
 
 go 1.19
 

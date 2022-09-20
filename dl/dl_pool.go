@@ -1,7 +1,7 @@
 package dl
 
 import (
-	"e621dl/e6api"
+	"e621-dl/e6api"
 	"fmt"
 	"os"
 	"path/filepath"

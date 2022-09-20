@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"e621dl/dl"
+	"e621-dl/dl"
 	"fmt"
 	"os"
 	"time"

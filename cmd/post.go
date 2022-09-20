@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"e621dl/dl"
-	"e621dl/e6api"
+	"e621-dl/dl"
+	"e621-dl/e6api"
 	"fmt"
 	"os"
 

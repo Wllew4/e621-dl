@@ -1,6 +1,6 @@
 package main
 
-import "e621dl/cmd"
+import "e621-dl/cmd"
 
 func main() {
 	cmd.Execute()
